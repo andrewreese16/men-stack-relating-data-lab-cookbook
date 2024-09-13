@@ -1,9 +1,10 @@
-<nav></nav>
-    <% if(user) { %>
-      <a href="/users/<%= user._id %>/foods">Your Apps</a>
-      <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
-    <% } %>
-  </nav>
+<nav class="navbar">
+  <% if(user) { %>
+  <a href="/users/<%= user._id %>/foods" class="nav-link">Your Apps</a>
+  <a href="/auth/sign-out" class="nav-link">Sign Out</a>
+  <a href="/users" class="nav-link">Explore Our Community</a>
+  <% } else { %>
+  <a href="/auth/sign-in" class="nav-link">Sign In</a>
+  <a href="/auth/sign-up" class="nav-link">Sign Up</a>
+  <% } %>
+</nav>

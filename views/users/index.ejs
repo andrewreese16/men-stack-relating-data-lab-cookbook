@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="community-container">
+      <h1 class="community-title">Explore Our Community</h1>
+      <ul class="community-list">
+        <% users.forEach(function(user) { %>
+        <li class="community-list-item">
+          <a href="/users/<%= user._id %>" class="community-list-link"
+            ><%= user.username %></a
+          >
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>

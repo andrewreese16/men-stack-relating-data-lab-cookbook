@@ -4,16 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Foods</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>All Foods</h1>
-    <a href="/users/<%= user._id %>/foods/new">Add A New Food</a>
+    <div class="all-foods-container">
+      <h1 class="all-foods-title">All Foods</h1>
+      <a href="/users/<%= user._id %>/foods/new" class="add-food-link"
+        >Add A New Food</a
+      >
 
-    <ul>
-      <% pantry.forEach(pantry => { %>
-      <li><%= pantry.name %></li>
-      <% }) %>
-    </ul>
+      <ul class="all-foods-list">
+        <% pantry.forEach(pantry => { %>
+        <li class="all-foods-item">
+          <a
+            href="/users/<%= user._id %>/foods/<%= pantry._id %>"
+            class="all-foods-link"
+          >
+            <%= pantry.name %>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
   </body>
 </html>

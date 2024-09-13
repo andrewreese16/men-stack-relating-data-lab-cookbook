@@ -3,29 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Food</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="new-food-container">
-      <h1 class="new-food-title">Add a Food!</h1>
+    <div class="edit-container">
+      <h1 class="edit-title">Edit Item</h1>
       <form
-        class="new-food-form"
-        action="/users/<%= user._id %>/foods"
+        class="edit-form"
+        action="/users/<%= user._id %>/foods/<%= pantry._id %>?_method=PUT"
         method="POST"
       >
-        <div class="new-food-field">
-          <label for="name" class="new-food-label">Name:</label>
+        <div class="edit-field">
+          <label for="name" class="edit-label">Name:</label>
           <input
             type="text"
             name="name"
             id="name"
-            class="new-food-input"
+            class="edit-input"
+            value="<%= pantry.name %>"
             required
           />
         </div>
-        <button type="submit" class="new-food-button">Add the food</button>
+        <button type="submit" class="edit-button">Update Food Item</button>
       </form>
     </div>
   </body>
